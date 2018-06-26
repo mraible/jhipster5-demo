@@ -7,6 +7,7 @@ import org.jhipster.blog.repository.EntryRepository;
 import org.jhipster.blog.web.rest.errors.ExceptionTranslator;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -18,6 +19,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -109,6 +111,7 @@ public class EntryResourceIntTest {
 
     @Test
     @Transactional
+    @WithMockUser
     public void createEntry() throws Exception {
         int databaseSizeBeforeCreate = entryRepository.findAll().size();
 
@@ -129,6 +132,7 @@ public class EntryResourceIntTest {
 
     @Test
     @Transactional
+    @WithMockUser
     public void createEntryWithExistingId() throws Exception {
         int databaseSizeBeforeCreate = entryRepository.findAll().size();
 
@@ -148,6 +152,7 @@ public class EntryResourceIntTest {
 
     @Test
     @Transactional
+    @WithMockUser
     public void checkTitleIsRequired() throws Exception {
         int databaseSizeBeforeTest = entryRepository.findAll().size();
         // set the field null
@@ -166,6 +171,27 @@ public class EntryResourceIntTest {
 
     @Test
     @Transactional
+    @WithMockUser
+    @Ignore
+    public void checkContentIsRequired() throws Exception {
+        int databaseSizeBeforeTest = entryRepository.findAll().size();
+        // set the field null
+        entry.setContent(null);
+
+        // Create the Entry, which fails.
+
+        restEntryMockMvc.perform(post("/api/entries")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(entry)))
+            .andExpect(status().isBadRequest());
+
+        List<Entry> entryList = entryRepository.findAll();
+        assertThat(entryList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    @WithMockUser
     public void checkDateIsRequired() throws Exception {
         int databaseSizeBeforeTest = entryRepository.findAll().size();
         // set the field null
@@ -197,7 +223,7 @@ public class EntryResourceIntTest {
             .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT.toString())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
     }
-    
+
     public void getAllEntriesWithEagerRelationshipsIsEnabled() throws Exception {
         EntryResource entryResource = new EntryResource(entryRepositoryMock);
         when(entryRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
@@ -244,8 +270,10 @@ public class EntryResourceIntTest {
             .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT.toString()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()));
     }
+
     @Test
     @Transactional
+    @WithMockUser
     public void getNonExistingEntry() throws Exception {
         // Get the entry
         restEntryMockMvc.perform(get("/api/entries/{id}", Long.MAX_VALUE))
@@ -254,6 +282,7 @@ public class EntryResourceIntTest {
 
     @Test
     @Transactional
+    @WithMockUser
     public void updateEntry() throws Exception {
         // Initialize the database
         entryRepository.saveAndFlush(entry);
@@ -285,6 +314,7 @@ public class EntryResourceIntTest {
 
     @Test
     @Transactional
+    @WithMockUser
     public void updateNonExistingEntry() throws Exception {
         int databaseSizeBeforeUpdate = entryRepository.findAll().size();
 
@@ -303,6 +333,7 @@ public class EntryResourceIntTest {
 
     @Test
     @Transactional
+    @WithMockUser
     public void deleteEntry() throws Exception {
         // Initialize the database
         entryRepository.saveAndFlush(entry);
