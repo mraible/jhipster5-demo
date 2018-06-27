@@ -378,21 +378,20 @@ Now it looks more like a regular blog!
 .Blog entries
 image::static/blog-entries.png[Blog entries, 800, scaledwidth=100%]
 
-=== Make it M00r Secure
+=== Lock It Down!
 
-You can further enhanced the security of your API by only allowing users that own a blog or entry to edit it.
+You can further enhanced the security of your API by only allowing users that own a blog (or entry) to edit it. Here's some sudo-code to show the logic:
 
 [source,java]
 ----
 Optional<Blog> blog = blogRepository.findById(id);
-if (blog.isPresent() && blog.get().getUser() != null &&
-    !blog.get().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
+if (blog.isPresent() && <user doesn't match current user>) {
     return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
 }
 return ResponseUtil.wrapOrNotFound(blog);
 ----
 
-Below is the refactored `BlogResource.java` after everything has been locked down.
+Below is the refactored `BlogResource.java` with additional logic in each method prevent data tampering.
 
 .src/main/java/org/jhipster/blog/web/rest/BlogResource.java
 [source,java]
