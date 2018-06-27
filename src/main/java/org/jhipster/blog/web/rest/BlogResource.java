@@ -51,9 +51,6 @@ public class BlogResource {
         if (blog.getId() != null) {
             throw new BadRequestAlertException("A new blog cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        if (!blog.getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
-        }
         Blog result = blogRepository.save(blog);
         return ResponseEntity.created(new URI("/api/blogs/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -78,7 +75,7 @@ public class BlogResource {
         }
         if (blog.getUser() != null &&
             !blog.getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("error.http.403", HttpStatus.UNAUTHORIZED);
         }
         Blog result = blogRepository.save(blog);
         return ResponseEntity.ok()
@@ -111,7 +108,7 @@ public class BlogResource {
         Optional<Blog> blog = blogRepository.findById(id);
         if (blog.isPresent() && blog.get().getUser() != null &&
             !blog.get().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("error.http.403", HttpStatus.UNAUTHORIZED);
         }
         return ResponseUtil.wrapOrNotFound(blog);
     }
@@ -129,7 +126,7 @@ public class BlogResource {
         Optional<Blog> blog = blogRepository.findById(id);
         if (blog.isPresent() && blog.get().getUser() != null &&
             !blog.get().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("error.http.403", HttpStatus.UNAUTHORIZED);
         }
         blogRepository.deleteById(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
