@@ -624,7 +624,7 @@ https://travis-ci.org[Travis CI] is continually testing this project with config
 
 == About the Author
 
-**Matt Raible** is a web developer, Java Champion, and Developer Advocate at https://okta.com[Okta]. He loves to architect and build slick-looking UIs with CSS and TypeScript. When he's not slinging code with open source frameworks, he likes to ski with his family, drive old VWs, and enjoy craft beer.
+**Matt Raible** is a web developer, Java Champion, and Developer Advocate at https://developer.okta.com[Okta]. He loves to architect and build slick-looking UIs with CSS and TypeScript. When he's not slinging code with open source frameworks, he likes to ski with his family, drive old VWs, and enjoy craft beer.
 
 Matt writes on the http://developer.okta.com/blog[Okta developer blog], his https://raibledesigns.com/[personal blog], and you can find him on Twitter https://twitter.com/mraible[@mraible].
 
