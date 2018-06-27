@@ -279,8 +279,7 @@ To:
 [source,java]
 .src/main/java/org/jhipster/blog/web/rest/EntryResource.java
 ----
-Page<Entry> page = entryRepository.findByBlogUserLoginOrderByDateDesc(
-    SecurityUtils.getCurrentUserLogin().orElse(null), pageable);
+Page<Entry> page = entryRepository.findByBlogUserLoginOrderByDateDesc(SecurityUtils.getCurrentUserLogin().orElse(null), pageable);
 ----
 
 Using your IDE, create this method in the `EntryRepository` class. It should look as follows:
@@ -386,7 +385,7 @@ You can further enhanced the security of your API by only allowing users that ow
 ----
 Optional<Blog> blog = blogRepository.findById(id);
 if (blog.isPresent() && <user doesn't match current user>) {
-    return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+    return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
 }
 return ResponseUtil.wrapOrNotFound(blog);
 ----
@@ -404,7 +403,7 @@ public ResponseEntity<?> createBlog(@Valid @RequestBody Blog blog) throws URISyn
         throw new BadRequestAlertException("A new blog cannot already have an ID", ENTITY_NAME, "idexists");
     }
     if (!blog.getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-        return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
     }
     Blog result = blogRepository.save(blog);
     return ResponseEntity.created(new URI("/api/blogs/" + result.getId()))
@@ -421,7 +420,7 @@ public ResponseEntity<?> updateBlog(@Valid @RequestBody Blog blog) throws URISyn
     }
     if (blog.getUser() != null &&
         !blog.getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-        return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
     }
     Blog result = blogRepository.save(blog);
     return ResponseEntity.ok()
@@ -436,7 +435,7 @@ public ResponseEntity<?> getBlog(@PathVariable Long id) {
     Optional<Blog> blog = blogRepository.findById(id);
     if (blog.isPresent() && blog.get().getUser() != null &&
         !blog.get().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-        return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
     }
     return ResponseUtil.wrapOrNotFound(blog);
 }
@@ -448,7 +447,7 @@ public ResponseEntity<?> deleteBlog(@PathVariable Long id) {
     Optional<Blog> blog = blogRepository.findById(id);
     if (blog.isPresent() && blog.get().getUser() != null &&
         !blog.get().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-        return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
     }
     blogRepository.deleteById(id);
     return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
