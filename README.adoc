@@ -126,7 +126,7 @@ image::static/generation-success.png[Generation success, 800, scaledwidth=100%]
 Run `./mvnw` to start the application and navigate to http://localhost:8080 in your favorite browser. The first thing you'll notice is a dapper-looking fellow explaining how you can sign in or register.
 
 .Default homepage
-image::static/default-homepage.png[Default homepage, 1290, scaledwidth=100%]
+image::static/default-homepage.png[Default homepage, 800, scaledwidth=100%]
 
 Sign in with username `admin` and password `admin`, and you'll have access to navigate through the Administration section. This section offers nice looking UIs on top of some Spring Boot's many monitoring and configuration features. It also allows you to administer users:
 
