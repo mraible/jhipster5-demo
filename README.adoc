@@ -41,13 +41,13 @@ If you'd like to get right to it, the https://github.com/mraible/jhipster5-demo[
 
 == What is JHipster?
 
-JHipster is one of those open-source projects you stumble upon and immediately think, "`Of course!`" It combines three very successful frameworks in web development: Bootstrap, Angular, and Spring Boot. Bootstrap was one of the first dominant web-component frameworks. Its largest appeal was that it only required a bit of HTML and it worked! All the efforts we made in the Java community to develop web components were shown a better path by Bootstrap. It leveled the playing field in HTML/CSS development, much like Apple's Human Interface Guidelines did for iOS apps.
+JHipster is one of those open-source projects you stumble upon and immediately think, "`Of course!`" It combines three very successful frameworks in web development: Bootstrap, Angular, and Spring Boot. Bootstrap was one of the first dominant web-component frameworks. Its most substantial appeal was that it only required a bit of HTML and it worked! All the efforts we made in the Java community to develop web components were shown a better path by Bootstrap. It leveled the playing field in HTML/CSS development, much like Apple's Human Interface Guidelines did for iOS apps.
 
-JHipster was started by Julien Dubois in October 2013 (Julien's first commit was on https://github.com/jhipster/generator-jhipster/commit/c8630ab7af7b6a99db880b3b0e2403806b7d2436[October 21, 2013]). The first public release (version 0.3.1) was launched December 7, 2013. Since then, the project has had over 115 releases! It is an open-source, Apache 2.0-licensed project on GitHub. It has a core team of 16 developers and over 280 contributors. You can find its homepage at https://www.jhipster.tech/[www.jhipster.tech]. If you look at https://github.com/jhipster/generator-jhipster[the project on GitHub], you can see it's mostly written in JavaScript (33%) and Java (27%).
+Julien Dubois started JHipster in October 2013 (Julien's first commit was on https://github.com/jhipster/generator-jhipster/commit/c8630ab7af7b6a99db880b3b0e2403806b7d2436[October 21, 2013]). The first public release (version 0.3.1) launched on December 7, 2013. Since then, the project has had over 170 releases! It is an open-source, Apache 2.0-licensed project on GitHub. It has a core team of 17 developers and over 420 contributors. You can find its homepage at https://www.jhipster.tech/[www.jhipster.tech]. If you look at https://github.com/jhipster/generator-jhipster[the project on GitHub], you can see it's mostly written in JavaScript (33%) and Java (27%).
 
-At its core, JHipster is a http://yeoman.io/[Yeoman] generator. Yeoman is a code generator that you run with a `yo` command to generate complete applications or useful pieces of an application. Yeoman generators promote what the Yeoman team calls the "`Yeoman workflow`". This is an opinionated client-side stack of tools that can help developers quickly build beautiful web applications. It takes care of providing everything needed to get working without the normal pains associated with a manual setup.
+At its core, JHipster is a http://yeoman.io/[Yeoman] generator. Yeoman is a code generator that you run with a `yo` command to generate complete applications or useful pieces of an application. Yeoman generators promote what the Yeoman team calls the "`Yeoman workflow`". This workflow is an opinionated client-side stack of tools that can help developers quickly build beautiful web applications. It takes care of providing everything needed to get working without the normal pains associated with a manual setup.
 
-JHipster 5 is the same JHipster many developers know and love, with a couple bright and shiny new features: namely React, Angular 6, and Spring Boot 2 support.
+JHipster 5 is the same JHipster many developers know and love, with a couple of bright and shiny new features: namely React, Angular 6, and Spring Boot 2 support.
 
 == Install JHipster 5
 
@@ -65,7 +65,7 @@ NOTE: If you're using npm, run `npm i -g --save-exact generator-jhipster@5.0.1`.
 
 == Create a Project
 
-To create a project, open a terminal window and create a directory. For example, `mdkdir blog`. Navigate into the directory and run `jhipster`. You'll be asked a number of questions about the type of application you want to create and what features you'd like to include. The screenshot below shows the choices I made to create a simple blog application with Angular.
+To create a project, open a terminal window and create a directory. For example, `mkdir blog`. Navigate into the directory and run `jhipster`. You'll be prompted to answer a number of questions about the type of application you want to create and what features you'd like to include. The screenshot below shows the choices I made to create a simple blog application with Angular.
 
 .Generating the application
 image::static/generating-blog.png[Generating the application, 800, scaledwidth=100%]
@@ -118,7 +118,7 @@ If you'd like to create the same application I did, you can place the following 
 
 TIP: **What about React?** If you'd like to see how to use JHipster 5 to build a React + OAuth 2.0 / OIDC app, see https://developer.okta.com/blog/2018/06/25/react-spring-boot-photo-gallery-pwa[Build a Photo Gallery PWA with React, Spring Boot, and JHipster].
 
-The project creation process will take a couple minutes to run, depending on your internet connection speed. When it's finished, you should see output like the following.
+The project creation process will take a couple of minutes to run, depending on your internet connection speed. When it's finished, you should see output like the following.
 
 .Generation success
 image::static/generation-success.png[Generation success, 800, scaledwidth=100%]
@@ -128,7 +128,7 @@ Run `./mvnw` to start the application and navigate to http://localhost:8080 in y
 .Default homepage
 image::static/default-homepage.png[Default homepage, 1290, scaledwidth=100%]
 
-Sign in with username `admin` and password `admin` and you'll have access to navigate through the Administration section. This section offers nice looking UIs on top of some Spring Boot's many monitoring and configuration features. It also allows you to administer users:
+Sign in with username `admin` and password `admin`, and you'll have access to navigate through the Administration section. This section offers nice looking UIs on top of some Spring Boot's many monitoring and configuration features. It also allows you to administer users:
 
 .User management
 image::static/user-management.png[User management, 800, scaledwidth=100%]
@@ -143,7 +143,7 @@ And it allows you to see the Swagger docs associated with its API.
 .Swagger docs
 image::static/swagger-ui.png[Swagger UI, 800, scaledwidth=100%]
 
-You can run the following command (in a separate terminal window) to run the Protractor tests and confirm everything is working properly.
+You can run the following command (in a separate terminal window) to run the Protractor tests and confirm everything is working correctly.
 
 ----
 yarn e2e
@@ -161,15 +161,15 @@ For each entity you want to create, you will need:
 * an Angular model, state, component, dialog components, service; and
 * several HTML pages for each component.
 
-In addition, you should have integration tests to verify that everything works and performance tests to verify that it runs fast. In an ideal world, you'd also have unit tests and integration tests for your Angular code.
+Also, you should have integration tests to verify that everything works and performance tests to confirm that it runs fast. In an ideal world, you'd also have unit tests and integration tests for your Angular code.
 
-The good news is JHipster can generate all of this code for you, including integration tests and performance tests. In addition, if you have entities with relationships, it will generate the necessary schema to support them (with foreign keys), and the TypeScript and HTML code to manage them. You can also set up validation to require certain fields as well as control their length.
+The good news is JHipster can generate all of this code for you, including integration tests and performance tests. Also, if you have entities with relationships, it will create the necessary schema to support them (with foreign keys), and the TypeScript and HTML code to manage them. You can also set up validation to require certain fields as well as control their length.
 
 JHipster supports several methods of code generation. The first uses its https://www.jhipster.tech/creating-an-entity/[entity sub-generator]. The entity sub-generator is a command-line tool that prompts you with questions which you answer.
 
 https://start.jhipster.tech/jdl-studio/[JDL-Studio] is a browser-based tool for defining your domain model with JHipster Domain Language (JDL). Finally, https://www.jhipster.tech/jhipster-uml/[JHipster-UML] is an option for those that like UML. Supported UML editors include https://www.modeliosoft.com/[Modelio], http://www.umldesigner.org/[UML Designer], https://www.genmymodel.com/[GenMyModel] and http://www.visual-paradigm.com/[Visual Paradigm]. I like the visual nature of JDL-Studio, so I'll use it for this project.
 
-Below is the entity diagram and JDL code needed to generate a simple blog with blogs, entries and tags.
+Below is the entity diagram and JDL code needed to generate a simple blog with blogs, entries, and tags.
 
 .Blog entity diagram
 image::static/jdl-studio.png[Blog entity diagram, 1171, scaledwidth=100%]
@@ -181,34 +181,34 @@ If you'd like to follow along, copy/paste the contents of the file below into ht
 .blog.jh
 ----
 entity Blog {
-	name String required minlength(3),
-	handle String required minlength(2)
+    name String required minlength(3),
+    handle String required minlength(2)
 }
 
 entity Entry {
-	title String required,
-	content TextBlob required,
-	date Instant required
+    title String required,
+    content TextBlob required,
+    date Instant required
 }
 
 entity Tag {
-	name String required minlength(2)
+    name String required minlength(2)
 }
 
 relationship ManyToOne {
-	Blog{user(login)} to User,
-	Entry{blog(name)} to Blog
+    Blog{user(login)} to User,
+    Entry{blog(name)} to Blog
 }
 
 relationship ManyToMany {
-	Entry{tag(name)} to Tag{entry}
+    Entry{tag(name)} to Tag{entry}
 }
 
 paginate Entry, Tag with infinite-scroll
 ----
 
 Click the download button in the top right corner to save it to your hard drive.
-Run the following command (in the `blog` directory) to import this file and generate entities, tests and a UI.
+Run the following command (in the `blog` directory) to import this file and generate entities, tests, and a UI.
 
 ----
 jhipster import-jdl ~/Downloads/jhipster-jdl.jh
@@ -216,7 +216,7 @@ jhipster import-jdl ~/Downloads/jhipster-jdl.jh
 
 You'll be prompted to overwrite `src/main/resources/config/liquibase/master.xml`. Type `a` to overwrite this file, as well as others.
 
-Restart the application with `/.mvnw` and run `yarn start` to view the UI for the generated entities. Create a couple blogs for the existing `admin` and `user` users, as well as a few blog entries.
+Restart the application with `/.mvnw` and run `yarn start` to view the UI for the generated entities. Create a couple of blogs for the existing `admin` and `user` users, as well as a few blog entries.
 
 TIP: You don't _have_ to run `yarn start`, but doing so allows you to change your UI files and see the results immediately.
 
@@ -341,7 +341,7 @@ image::static/entries-with-html.png[Escaped HTML, 800, scaledwidth=100%]
 
 ==== Improve the layout
 
-To make the list of entries look like a blog, replace `<div class="table-responsive">` with HTML so it uses a stacked layout in a single column.
+To make the list of entries look like a blog, replace `<div class="table-responsive">` with HTML, so it uses a stacked layout in a single column.
 
 [source,html]
 .src/main/webapp/app/entities/entry/entry.component.html
@@ -455,7 +455,7 @@ public ResponseEntity<?> deleteBlog(@PathVariable Long id) {
 }
 ----
 
-You'll need to make similar changes in `EntryResource.java`. See https://github.com/mraible/jhipster5-demo/commit/9694891f98c4c1076ee636664f2cb0f6cd7986f0[this commit] for all the changes that you'll need in to these two classes, as well as their integration tests.
+You'll need to make similar changes in `EntryResource.java`. See https://github.com/mraible/jhipster5-demo/commit/9694891f98c4c1076ee636664f2cb0f6cd7986f0[this commit] for all the changes that you'll need in these two classes, as well as their integration tests.
 
 == Deploy to the Cloud
 
@@ -466,7 +466,7 @@ JHipster ships with support for deploying to https://www.jhipster.tech/cloudfoun
 When you prepare a JHipster application for production, it's recommended to use the pre-configured "`production`" profile. With Maven, you can package your application by specifying the `prod` profile when building.
 
 ----
-mvn -Pprod package
+./mvnw -Pprod package
 ----
 
 The production profile is used to build an optimized JavaScript client. You can invoke this using webpack by running `yarn run webpack:prod`.
@@ -485,7 +485,7 @@ When you run this command, you'll likely get a test failure.
 [ERROR] Tests run: 154, Failures: 1, Errors: 0, Skipped: 0
 ----
 
-The reason this happens is shown in a stack trace in your terminal.
+The reason this happens is in a stack trace in your terminal.
 
 ----
 org.springframework.dao.InvalidDataAccessApiUsageException: Authentication object cannot be null
@@ -500,7 +500,7 @@ To fix this, you can use Spring Security Test's http://docs.spring.io/spring-sec
 private UserRepository userRepository;
 ----
 
-Change the `createEntity()` method so its not `static` and uses the `userRepository` to set a user on the blog entity.
+Change the `createEntity()` method so it's not `static` and uses the `userRepository` to set a user on the blog entity.
 
 [source,java]
 ----
@@ -523,7 +523,7 @@ Add `@WithMockUser` to the `getAllBlogs()` method.
 public void getAllBlogs() throws Exception {
 ----
 
-After fixing this test, you should be able to run `mvn -Pprod package` without any failures.
+After fixing this test, you should be able to run `./mvnw -Pprod package` without any failures.
 
 To deploy this application to Heroku, I logged in to my account using `heroku login` from the command line. I already had the https://devcenter.heroku.com/articles/heroku-command-line[Heroku CLI] installed.
 
@@ -586,11 +586,11 @@ To https://git.heroku.com/jhipster-5-demo.git
  * [new branch]      HEAD -> master
 
 Your app should now be live. To view it run
-	heroku open
+    heroku open
 And you can view the logs with this command
-	heroku logs --tail
+    heroku logs --tail
 After application modification, redeploy it with
-	jhipster heroku
+    jhipster heroku
 Congratulations, JHipster execution is complete!
 Execution time: 6 min. 7 s.
 ----
@@ -602,7 +602,7 @@ image::static/jhipster5-demo-heroku.png[JHipster 5 Demo on Heroku, 800, scaledwi
 
 == Learn More about JHipster
 
-I hope you've enjoyed learning how JHipster can help you develop hip web applications! It's a nifty project, with an easy-to-use entity generator, a pretty UI and many Spring Boot best-practice patterns. The project team follows five simple https://www.jhipster.tech/policies/[policies], paraphrased here:
+I hope you've enjoyed learning how JHipster can help you develop modern web applications! It's a nifty project, with an easy-to-use entity generator, a pretty UI, and many Spring Boot best-practice patterns. The project team follows five simple https://www.jhipster.tech/policies/[policies], paraphrased here:
 
 1. The development team votes on policies.
 2. JHipster uses technologies with their default configurations as much as possible.
