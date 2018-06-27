@@ -391,7 +391,7 @@ if (blog.isPresent() && <user doesn't match current user>) {
 return ResponseUtil.wrapOrNotFound(blog);
 ----
 
-Below is the refactored `BlogResource.java` with additional logic in each method prevent data tampering.
+Below is the refactored `BlogResource.java` with additional logic in each method to prevent data tampering.
 
 .src/main/java/org/jhipster/blog/web/rest/BlogResource.java
 [source,java]
