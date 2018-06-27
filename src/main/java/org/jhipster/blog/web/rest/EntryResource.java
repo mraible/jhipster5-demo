@@ -57,7 +57,7 @@ public class EntryResource {
         }
         if (entry.getBlog() != null &&
             !entry.getBlog().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("error.http.403", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
         }
         Entry result = entryRepository.save(entry);
         return ResponseEntity.created(new URI("/api/entries/" + result.getId()))
@@ -83,7 +83,7 @@ public class EntryResource {
         }
         if (entry.getBlog() != null &&
             !entry.getBlog().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("error.http.403", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
         }
         Entry result = entryRepository.save(entry);
         return ResponseEntity.ok()
@@ -122,7 +122,7 @@ public class EntryResource {
         Optional<Entry> entry = entryRepository.findOneWithEagerRelationships(id);
         if (entry.isPresent() && entry.get().getBlog() != null &&
             !entry.get().getBlog().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("error.http.403", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
         }
         return ResponseUtil.wrapOrNotFound(entry);
     }
@@ -140,7 +140,7 @@ public class EntryResource {
         Optional<Entry> entry = entryRepository.findOneWithEagerRelationships(id);
         if (entry.isPresent() && entry.get().getBlog() != null &&
             !entry.get().getBlog().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin().orElse(""))) {
-            return new ResponseEntity<>("error.http.403", HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>("error.http.403", HttpStatus.FORBIDDEN);
         }
         entryRepository.deleteById(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
