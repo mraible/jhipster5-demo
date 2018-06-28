@@ -621,6 +621,18 @@ The source code for this project is available on GitHub at https://github.com/mr
 
 https://travis-ci.org[Travis CI] is continually testing this project with configuration from its https://github.com/mraible/jhipster5-demo/blob/master/.travis.yml[`.travis.yml`] file. This file was generated using `jhipster ci-cd` and everything https://github.com/mraible/jhipster5-demo/pull/1[passed on the first try]!
 
+== Learn More about JHipster
+
+To learn more about JHipster and all it has to offer, look no further than https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X[Full Stack Development with JHipster] by https://twitter.com/deepu105[Deepu K Sasidharan] and [Sendil Kumar](https://twitter.com/sendilkumarn). Both Deepu and Sendil have contributed an incredible amount of time and code to JHipster. They're both amazing developers! ❤️👌
+
+There's also some excellent online training videos:
+
+* https://therealdanvega.teachable.com/p/jhipster/?product_id=456739&coupon_code=JHIPSTER[Angular 4 Java Developers by Dan Vega and John Thompson]
+* https://www.pluralsight.com/courses/scaffolding-spring-boot-and-angular-with-jhipster[Scaffolding Spring Boot and Angular Web Apps with JHipster by Michael Hoffman]
+* https://linkedin-learning.pxf.io/c/1252615/449670/8005?u=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fjhipster-build-and-deploy-spring-boot-microservices%3Ftrk%3Dinsiders_43129714_learning[JHipster: Build and Deploy Spring Boot Microservices by Chris Anatalio]
+
+Follow https://twitter.com/java_hipster[@java_hipster] on Twitter for release announcements, articles, new features, and upcoming talks.
+
 == About the Author
 
 **Matt Raible** is a web developer, Java Champion, and Developer Advocate at https://developer.okta.com[Okta]. He loves to architect and build slick-looking UIs with CSS and TypeScript. When he's not slinging code with open source frameworks, he likes to ski with his family, drive old VWs, and enjoy craft beer.
