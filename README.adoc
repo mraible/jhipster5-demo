@@ -599,7 +599,7 @@ I ran `heroku open`, logged as `admin` and was pleased to see it worked!
 .JHipster 5 Demo on Heroku
 image::static/jhipster5-demo-heroku.png[JHipster 5 Demo on Heroku, 800, scaledwidth=100%]
 
-== Learn More about JHipster
+== JHipster: Accelerating Spring Boot + Angular Development
 
 I hope you've enjoyed learning how JHipster can help you develop modern web applications! It's a nifty project, with an easy-to-use entity generator, a pretty UI, and many Spring Boot best-practice patterns. The project team follows five simple https://www.jhipster.tech/policies/[policies], paraphrased here:
 
@@ -614,6 +614,8 @@ These policies help the project maintain its sharp edge and streamline its devel
 Now that you've learned how to use Angular, Bootstrap 4, and Spring Boot with JHipster, go forth and develop great applications!
 
 TIP: Developing microservices with JHipster is possible too! See https://developer.okta.com/blog/2018/03/01/develop-microservices-jhipster-oauth[Develop a Microservices Architecture with OAuth 2.0 and JHipster] to learn how. You can also http://www.jhipster-book.com/#!/news/entry/pluralsight-developing-microservices-and-mobile-apps-with-jhipster-play-by-play[watch my Pluralsight Play by Play on Developing Microservices and Mobile Apps with JHipster].
+
+== Learn More about JHipster
 
 To learn more about JHipster and all it has to offer, look no further than https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X[Full Stack Development with JHipster] by https://twitter.com/deepu105[Deepu K Sasidharan] and https://twitter.com/sendilkumarn[Sendil Kumar]. Both Deepu and Sendil have contributed an incredible amount of time and code to JHipster. We've very luck to have them. They're both amazing developers! ❤️👌👏
 
