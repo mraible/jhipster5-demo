@@ -615,14 +615,6 @@ Now that you've learned how to use Angular, Bootstrap 4, and Spring Boot with JH
 
 TIP: Developing microservices with JHipster is possible too! See https://developer.okta.com/blog/2018/03/01/develop-microservices-jhipster-oauth[Develop a Microservices Architecture with OAuth 2.0 and JHipster] to learn how. You can also http://www.jhipster-book.com/#!/news/entry/pluralsight-developing-microservices-and-mobile-apps-with-jhipster-play-by-play[watch my Pluralsight Play by Play on Developing Microservices and Mobile Apps with JHipster].
 
-== Source Code
-
-The source code for this project is available on GitHub at https://github.com/mraible/jhipster5-demo[mraible/jhipster5-demo].
-
-https://travis-ci.org[Travis CI] is continually testing this project with configuration from its https://github.com/mraible/jhipster5-demo/blob/master/.travis.yml[`.travis.yml`] file. This file was generated using `jhipster ci-cd` and everything https://github.com/mraible/jhipster5-demo/pull/1[passed on the first try]!
-
-== Learn More about JHipster
-
 To learn more about JHipster and all it has to offer, look no further than https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X[Full Stack Development with JHipster] by https://twitter.com/deepu105[Deepu K Sasidharan] and https://twitter.com/sendilkumarn[Sendil Kumar]. Both Deepu and Sendil have contributed an incredible amount of time and code to JHipster. We've very luck to have them. They're both amazing developers! ❤️👌👏
 
 JHipster's awesome community has starred in some excellent online training videos too:
@@ -632,6 +624,12 @@ JHipster's awesome community has starred in some excellent online training video
 * https://linkedin-learning.pxf.io/c/1252615/449670/8005?u=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fjhipster-build-and-deploy-spring-boot-microservices%3Ftrk%3Dinsiders_43129714_learning[JHipster: Build and Deploy Spring Boot Microservices by Chris Anatalio]
 
 Follow https://twitter.com/java_hipster[@java_hipster] on Twitter for release announcements, articles, new features, and upcoming talks.
+
+== Source Code
+
+The source code for this project is available on GitHub at https://github.com/mraible/jhipster5-demo[mraible/jhipster5-demo].
+
+https://travis-ci.org[Travis CI] is continually testing this project with configuration from its https://github.com/mraible/jhipster5-demo/blob/master/.travis.yml[`.travis.yml`] file. This file was generated using `jhipster ci-cd` and everything https://github.com/mraible/jhipster5-demo/pull/1[passed on the first try]!
 
 == About the Author
 
